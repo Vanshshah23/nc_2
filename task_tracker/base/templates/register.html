@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Floating labels example for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+<form method="post" action="{{ url_for('register_page') }}" class="form-signin">
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Register....</h1>
+    </div>
+
+    <div class="form-label-group">
+        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required
+               autofocus>
+        <label for="inputEmail">Email address</label>
+    </div>
+    </br>
+    <div class="form-label-group">
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <label for="inputPassword">Password</label>
+    </div>
+    </br>
+    <div class="form-label-group">
+        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Password" required>
+        <label for="inputPassword">Confirm password</label>
+    </div>
+</br>
+    <div class="form-label-group">
+        <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First name" required>
+        <label for="inputPassword">Firstname</label>
+    </div>
+</br>
+    <div class="form-label-group">
+        <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last name" required>
+        <label for="inputPassword">Lastname</label>
+    </div>
+</br>
+    <div class="form-label-group">
+        <input type="text" id="contact" name="contact" class="form-control" placeholder="Contact" required>
+        <label for="inputPassword">Contact</label>
+    </div>
+</br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-danger" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</form>
+<a href="/">Login</a>
+</body>
+</html>
